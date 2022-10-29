@@ -1,0 +1,34 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+body{
+  /*Cor base dos nossos textos*/
+  --text-cyan: #00ffff;
+  --text-pink: #fb44ff;
+  --text-blue: #0e1727;
+  --text-light: #faf9f9;
+  --text-dark:#00050e;
+  /*Cor base do nosso fundo*/
+  --bg-dark: #440a6b;
+
+  /*Fonts*/
+
+  font-family:'poppins','Segoe UI', tahoma ,geneva, sans-serif;
+  line-height:1.7;
+  color: var(--text-light);
+  background: var(--bg-dark);
+  overflow-x:hidden;
+}
+
+body::-webkit-scrollbar{
+  width:10px;
+  background-color: var(--bg-dark);
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: webkit-linear-gradient(140deg, #00ffff, #fb44ff);
+  background: webkit-linear-gradient(linear, 40% 0%, 75% 84%, from(#00ffff), to(#fb44ff),color-stop(.6,#fb44ff));
+}
