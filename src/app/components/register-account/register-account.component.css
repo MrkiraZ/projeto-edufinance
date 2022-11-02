@@ -1,39 +1,36 @@
-.background-radial-gradient {
-  background-color: hsl(218, 41%, 15%);
-  background-image: radial-gradient(650px circle at 0% 0%,
-      hsl(218, 41%, 35%) 15%,
-      hsl(218, 41%, 30%) 35%,
-      hsl(218, 41%, 20%) 75%,
-      hsl(218, 41%, 19%) 80%,
-      transparent 100%),
-    radial-gradient(1250px circle at 100% 100%,
-      hsl(218, 41%, 45%) 15%,
-      hsl(218, 41%, 30%) 35%,
-      hsl(218, 41%, 20%) 75%,
-      hsl(218, 41%, 19%) 80%,
-      transparent 100%);
+.bg-lgr{
+  height:80vh;
+  display:flex;
+  margin:1rem;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 15px;
+
+}
+.register{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows:1fr;
+  grid-column-gap: 0;
+  grid-row-gap:0;
 }
 
-#radius-shape-1 {
-  height: 220px;
-  width: 220px;
-  top: -60px;
-  left: -130px;
-  background: radial-gradient(#44006b, #ad1fff);
-  overflow: hidden;
+.col .register-img{
+  display:grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: repeat(3, 1fr);
+  background:
+  linear-gradient(180deg, #FF5CAA 0.01%, #1C9890 100%)
 }
-
-#radius-shape-2 {
-  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
-  bottom: -60px;
-  right: -110px;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(#44006b, #ad1fff);
-  overflow: hidden;
+.register-img .img-content{
+  background:url(../../../assets/images/register-image.jpg) center center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  grid-area: 2 / 1 / 6 / 2;
+  border-radius: 15px;
 }
-
-.bg-glass {
-  background-color: hsla(240, 87%, 3%, 0.9) !important;
-  backdrop-filter: saturate(200%) blur(25px);
+.img-logo{
+  background: url(../../../assets/images/LOGO-1.png);
+  background-repeat: no-repeat;
+  background-position-x:center;
 }

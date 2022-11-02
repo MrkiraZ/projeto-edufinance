@@ -14,6 +14,7 @@ import { AdmGestaoUsuariosComponent } from './components/adm-gestao-usuarios/adm
 import { HistoricoCarteiraComponent } from './components/historico-carteira/historico-carteira.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ErroComponent } from './components/erro/erro.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     AdmGestaoUsuariosComponent,
     HistoricoCarteiraComponent,
     SobreComponent,
-    FooterComponent
+    FooterComponent,
+    ErroComponent
   ],
   imports: [
     BrowserModule,

@@ -32,3 +32,41 @@ body::-webkit-scrollbar-thumb{
   background: webkit-linear-gradient(140deg, #00ffff, #fb44ff);
   background: webkit-linear-gradient(linear, 40% 0%, 75% 84%, from(#00ffff), to(#fb44ff),color-stop(.6,#fb44ff));
 }
+
+
+.parent{
+  display: grid;
+  grid-template-columns: 6fr repeat(2,0fr) repeat(2,0fr);
+  grid-template-rows: 1fr 5fr 0 repeat(2,0fr) 1fr;
+  grid-column-gap:0 ;
+  grid-row-gap: 0;
+  width: 100vw;
+}
+container-header {
+  background: #2085d8;
+  grid-area: 1/1/2/6;
+}
+
+container-main{
+  display: flex;
+  grid-area: 2/1/6/2;
+}
+
+.container-footer{
+  background:#2085d8;
+  grid-area: 6/1/7/2;
+}
+
+
+
+.admin-lista-table{
+  width: 100vw;
+  margin:auto;
+  display: grid;
+  place-items: center;
+}
+
+.borda{
+  margin: auto;
+  max-width:60%;
+}
