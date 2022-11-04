@@ -20,7 +20,7 @@ export class UsuarioService {
 
    //retorna cliente especifico (util para perfil e gestao)
    public getUsuarioApi(cpf:string): Observable<Usuario>{
-      const url = `${this.baseUrl}/${cpf}`
+      const url = `${this.baseUrl}/buscar/${cpf}`
       return this.http.get<Usuario>(url);
    }
    //cadastra o cliente no banco de dados

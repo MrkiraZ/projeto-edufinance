@@ -48,6 +48,10 @@ export class RegisterAccountComponent implements OnInit {
   consultaCep(cep:string){
       this.cepService.buscarCep(cep).subscribe(res=> this.endereco = res);
     }
+    validaCpf(cpf:string):boolean{
+      const CPF = require('cpf');
+      return CPF.isValid(cpf)
+    }
   incluir(usuario:Usuario):void{
     //setando as informacoes de endereco
     usuario.cep = this.endereco.cep?.replace("-","");
