@@ -21,7 +21,6 @@
       <a class="navbar-brand mt-2 mt-lg-0" routerLink="home">
         <img
           src="../../assets/images/logo-short.png"
-
           alt="edufinance Logo"
           loading="lazy"
         />
@@ -30,21 +29,24 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <i class="bi bi-newspaper" style="font-size:25px;"></i>
+            <i class="bi bi-newspaper" style="font-size: 25px"></i>
             <span>Artigos</span>
-            </a>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2" href="#">
-            <i class="bi bi-lightbulb-fill" style="font-size:25px;"></i>
+            <i class="bi bi-lightbulb-fill" style="font-size: 25px"></i>
             <span>Dicas</span>
-            </a>
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link d-flex align-items-center gap-2" routerLink="sobre">
-            <i class="bi bi-info-circle-fill" style="font-size:25px;"></i>
+          <a
+            class="nav-link d-flex align-items-center gap-2"
+            routerLink="sobre"
+          >
+            <i class="bi bi-info-circle-fill" style="font-size: 25px"></i>
             <span>Quem somos</span>
-            </a>
+          </a>
         </li>
       </ul>
       <!-- Left links -->
@@ -55,22 +57,31 @@
     <div class="d-flex align-items-center gap-5" *ngIf="isLogado()">
       <!-- Icon -->
 
-        <!--dashboard-->
-        <div>
-          <button type="button" routerLink="dashboard" class="btn btn-success position-relative">
-            <i class="bi bi-speedometer" style=" color: rgb(255, 255, 255);" ></i>
-            Dashboard
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              1
-              <span class="visually-hidden">unread messages</span>
-            </span>
-          </button>
-        </div>
-
+      <!--dashboard-->
+      <div>
+        <button
+          type="button"
+          routerLink="dashboard"
+          class="btn btn-success position-relative"
+        >
+          <i class="bi bi-speedometer" style="color: rgb(255, 255, 255)"></i>
+          Dashboard
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            1
+            <span class="visually-hidden">unread messages</span>
+          </span>
+        </button>
+      </div>
       <!-- Avatar -->
-      <button class="btn dropdown-toggle  " type="button" data-bs-toggle="dropdown" aria-haspopup="true">
-
-          <img
+      <button
+        class="btn dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-haspopup="true"
+      >
+        <img
           src="https://thispersondoesnotexist.com/image"
           class="rounded-circle"
           height="50"
@@ -78,46 +89,57 @@
           loading="lazy"
         />
 
-    <ul
-      class="dropdown-menu dropdown-menu-end"
-      aria-labelledby="navbarDropdownMenuAvatar"
-    >
-      <li>
-        <a class="dropdown-item d-flex align-items-center gap-2" routerLink="profile">
-          <i class="bi bi-person-lines-fill"></i>
-          <span>Meu perfil</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-          <i class="bi bi-wallet2"></i>
-          <span>Carteiras</span></a>
-      </li>
-      <li >
-        <a class="dropdown-item d-flex align-items-center gap-2" href="#">
-          <i class="bi bi-clock"></i>
-          <span>Historico</span></a>
-      </li>
-      <li>
-        <a class="dropdown-item d-flex align-items-center gap-2" (click)="deslogar()">
-          <i class="bi bi-door-open"></i>
-          <span>Logout</span>
-          </a>
-      </li>
-    </ul>
-    </button>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a
+              class="dropdown-item d-flex align-items-center gap-2"
+              routerLink="profile"
+            >
+              <i class="bi bi-person-lines-fill"></i>
+              <span>Meu perfil</span></a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-wallet2"></i>
+              <span>Carteiras</span></a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+              <i class="bi bi-clock"></i>
+              <span>Historico</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item d-flex align-items-center gap-2"
+              (click)="deslogar()"
+            >
+              <i class="bi bi-door-open"></i>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </button>
     </div>
     <div class="d-flex align-items-center">
-    <div class="nav-item"  *ngIf="!isLogado()" >
-      <button type="button" routerLink="login" class="btn btn-info position-relative d-flex align-items-center">
-        <i class="bi bi-box-arrow-in-right" style="font-size:25px;"></i>
-        <span class="badge text-bg-info ">Login/Cadastrar</span>
-      </button>
-
-
+      <div class="nav-item" *ngIf="!isLogado()">
+        <button
+          type="button"
+          routerLink="login"
+          class="btn btn-info position-relative d-flex align-items-center"
+        >
+          <i class="bi bi-box-arrow-in-right" style="font-size: 25px"></i>
+          <span class="badge text-bg-info">Login/Cadastrar</span>
+        </button>
+      </div>
     </div>
   </div>
-  </div>
-    <!-- Right elements -->
+  <!-- Right elements -->
   <!-- Container wrapper -->
 </nav>
 <!-- Navbar -->

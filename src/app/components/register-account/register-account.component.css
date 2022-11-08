@@ -20,7 +20,7 @@
   height: 100%;
   grid-template-rows: repeat(3, 1fr);
   background:
-  linear-gradient(180deg, #FF5CAA 0.01%, #1C9890 100%)
+  linear-gradient(180deg, #FF5CAA 0.01%, #1C9890 100%);
 }
 .register-img .img-content{
   background:url(../../../assets/images/register-image.jpg) center center;

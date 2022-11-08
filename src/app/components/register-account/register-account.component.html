@@ -40,11 +40,11 @@
                   <label class="form-label">CPF</label>
                   <input
                     type="text"
-                    maxlength="11"
                     class="form-control"
                     name="cpf"
                     [(ngModel)]="usuario.cpf"
                     name="cpf"
+                    mask="000.000.000-00"
                   />
                 </div>
                 <div class="col">
@@ -113,6 +113,7 @@
                     type="text"
                     class="form-control"
                     name="numero"
+                    mask="000000"
                     [(ngModel)]="usuario.numero"
                     name="numero"
                   />

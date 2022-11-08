@@ -13,30 +13,39 @@ export class LoginComponent implements OnInit {
               private usuarioService:UsuarioService,
               ) { }
   usuario: Usuario ={};
-  erro!:string;
+  erro:string="";
   storage: Storage = localStorage
 
   ngOnInit(): void {
     this.storage.removeItem(`usuario`);
+    this.storage.removeItem(`admin`)
   }
   login(usuario:Usuario):void{
     let user = usuario.cpf
     let senha= usuario.senha
     if(user != null && senha != null){
+      if(user == `admin` && senha ==`admin`){
+        localStorage.setItem(`admin`, `admin`)
+
+        //colocar o link de redirect do adm
+      }
       this.usuarioService.getUsuarioApi(user).subscribe((res) => {
         if(res.cpf == user && res.senha == senha){
           this.storage.setItem(`usuario`, user as string)
           this.router.navigate([`/dashboard`])
         }
-        if(user == `admin` && senha ==`admin`){
-          localStorage.setItem(`admin`, `admin`)
-          //colocar o link de redirect do adm
-        }
-        else{
-          this.erro = "Usuario ou senha invalidos"
-        }
-      });
+      },
+      (erro)=>
+        this.erro = "Usuario ou senha invalidos"
+
+      );
     }
+  }
+  userNotFound():boolean{
+    if (this.erro.length!=0){
+      return true
+    }
+    return false
   }
   validaCpf(cpf:string):boolean{
     const CPF = require('cpf');

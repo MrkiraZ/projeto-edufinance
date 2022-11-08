@@ -1,16 +1,9 @@
-<div class="container py-5 h-100">
+<div class="container py-5">
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col col-xl-10">
       <div class="card" style="border-radius: 1rem">
         <div class="row g-0">
-          <div class="col-md-6 col-lg-5 d-none d-md-block">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
-              alt="login form"
-              class="img-fluid"
-              style="border-radius: 1rem 0 0 1rem"
-            />
-          </div>
+          <div class="col-md-6 col-lg-5 d-none d-md-block pic"></div>
           <div class="col-md-6 col-lg-7 d-flex align-items-center">
             <div class="card-body p-4 p-lg-5">
               <form>
@@ -134,12 +127,6 @@
                     (blur)="validaCpf($any($event.target).value)"
                   />
                 </div>
-                <!-- <div class="alert alert-danger" role="alert" *ngIf="!isCpf()">
-                  <span>CPF Invalido</span>
-                </div>
-                <div class="alert alert-success" role="alert" *ngIf="isCpf()">
-                  <span>CPF OK</span>
-                </div> -->
                 <div class="form-outline mb-4">
                   <label class="form-label">Senha</label>
                   <input
@@ -159,8 +146,14 @@
                     Login
                   </button>
                 </div>
+                <div
+                  *ngIf="userNotFound()"
+                  class="alert alert-danger"
+                  role="alert"
+                >
+                  <span>{{ erro }}</span>
+                </div>
 
-                <a class="small text-muted" href="#">Esqueceu a senha?</a>
                 <p class="mb-5 pb-lg-2" style="color: #393f81">
                   Ainda não é cadastrado?
                   <a

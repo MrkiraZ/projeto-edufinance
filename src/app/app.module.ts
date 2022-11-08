@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { HistoricoCarteiraComponent } from './components/historico-carteira/hist
 import { SobreComponent } from './components/sobre/sobre.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErroComponent } from './components/erro/erro.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,15 @@ import { ErroComponent } from './components/erro/erro.component';
     HistoricoCarteiraComponent,
     SobreComponent,
     FooterComponent,
-    ErroComponent
+    ErroComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

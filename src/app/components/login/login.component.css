@@ -1,15 +1,15 @@
+.container{
+  height: 87vh;
+  width: 100%;
+}
 .card-body{
   background-color:#fff;
   color:#01237D;
 }
-.img{
-  background: url("../../../assets/images/LOGO-1.png");
-}
-.alert{
-  width: 100px;
-  height: 50px;
-}
 
- span{
-  font-size: 15px;
+.pic{
+  background:url(../../../assets/images/login.jpg) center center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
 }
