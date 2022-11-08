@@ -11,7 +11,7 @@
         alt="foto de perfil"
         loading="lazy"
       />
-      <h3 class="mt-2">Darth Vader</h3>
+      <h3 class="mt-2">{{ usuario.nome }}</h3>
     </div>
     <ul>
       <li class="mt-5 mb-3">
@@ -49,6 +49,15 @@
   </div>
 
   <div class="details">
-    <h1 class="text-center mt-2">Resumo</h1>
+    <h1 class="text-center mt-2">
+      Resumo <i class="bi bi-file-earmark-person-fill"></i>
+    </h1>
+    <span>{{ usuario.nomePerfil }}</span>
+    <span>{{ usuario.email }}</span>
+    <span>{{ usuario.dtNascimento }}</span>
+    <span>{{ usuario.sexo }}</span>
+    <span>{{ usuario.logradouro }}</span>
+    <span>{{ usuario.cep }}</span>
+    <span>{{ usuario.cidade }}</span>
   </div>
 </div>

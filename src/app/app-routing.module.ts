@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterAccountComponent } from './components/register-account/register-account.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
+import { HistoricoCarteiraComponent } from './components/historico-carteira/historico-carteira.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
   {path: 'sobre', component: SobreComponent},
   {path: `profile`, component: ProfileComponent, canActivate:[AuthGuardGuard]},
   {path: `dashboard`,component:DashboardComponent,canActivate:[AuthGuardGuard]},
-
+  {path: `carteiras`, component:HistoricoCarteiraComponent,canActivate:[AuthGuardGuard]},
   {path: '**', component:ErroComponent},
 ];
 
