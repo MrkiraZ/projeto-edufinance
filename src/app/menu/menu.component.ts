@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
   }
   deslogar(){
     this.storage.removeItem("usuario")
+    this.router.navigate([`/home`])
     console.log("desloguei")
   }
 }

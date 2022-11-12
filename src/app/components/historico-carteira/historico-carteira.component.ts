@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Carteira } from 'src/app/interfaces/carteira';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { CarteiraService } from 'src/app/services/carteira.service';
+import { MovimentacaoService } from 'src/app/services/movimentacao.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { Movimentacao } from '../../interfaces/movimentacao';
 
 @Component({
   selector: 'app-historico-carteira',
@@ -7,9 +14,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoricoCarteiraComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private usuarioService:UsuarioService,
+    private carteiraService:CarteiraService,
+    private movimentacaoService:MovimentacaoService) { }
+usuario: Usuario ={};
+carteiras:Carteira[]=[]
+carteira: Carteira={}
+movimentacoes:Movimentacao[]=[]
+erro:string="";
+storage: Storage = localStorage
 
-  ngOnInit(): void {
+ngOnInit(): void {
+  this.usuarioService.getUsuarioApi(this.storage.getItem(`usuario`) as string).subscribe((res) =>{ this.usuario = res})
+  this.carteiraService.getCarteirasPorCpfApi(this.storage.getItem(`usuario`) as string).subscribe(res=>{this.carteiras=res})
+}
+  incluirCarteira(carteira:Carteira){
+    carteira.cpf= this.storage.getItem(`usuario`) as string
+    this.carteiraService.postCarteiraApi(carteira).subscribe(() =>this.router.navigate(["/carteiras"]));
+    window.location.reload()
+
   }
-
+  removerCarteira(idCarteira:number){
+    this.carteiraService.deleteCarteiraApi(idCarteira).subscribe(() =>this.router.navigate([this.router.url]))
+    window.location.reload()
+  }
+  loadMovimentacoes(idCarteira:number){
+    this.movimentacoes=[]
+    this.movimentacaoService.getMovimentacaosPorCarteiraApi(idCarteira).subscribe(res =>{this.movimentacoes=res})
+  }
 }

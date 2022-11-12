@@ -1,1 +1,200 @@
-<p>historico-carteira works!</p>
+<div class="content mt-5 mb-5">
+  <div class="info">
+    <div class="logout">
+      <i class="bi bi-box-arrow-left" style="font-size: 35px"></i>
+    </div>
+    <div class="profile-img mt-5 mx-5 text-center">
+      <img
+        src="https://thispersondoesnotexist.com/image"
+        class="rounded-circle"
+        height="150"
+        alt="foto de perfil"
+        loading="lazy"
+      />
+      <h3 class="mt-2">{{ usuario.nome }}</h3>
+    </div>
+    <ul>
+      <li class="mt-5 mb-3">
+        <a routerLink="/profile" class="mx-3">
+          <i
+            class="bi bi-person-workspace"
+            style="color: #ffff; font-size: 30px"
+          >
+          </i>
+          <span class="px-3">Dados</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/carteiras" class="mx-3">
+          <i class="bi bi-wallet2" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Carteiras</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/dashboard" class="mx-3">
+          <i class="bi bi-speedometer" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Dashboard</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a href="#" class="mx-3">
+          <i
+            class="bi bi-shield-check"
+            style="color: #ffff; font-size: 30px"
+          ></i>
+          <span class="px-3">Seguranca</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="details">
+    <div class="caixas d-flex mt-5">
+      <div class="wrapper">
+        <div class="app-wrapper">
+          <!--Wallet-->
+          <aside class="wallet">
+            <div class="title mt-3 mb-2">
+              <h1 class="text-center mt-2">
+                Carteiras <i class="bi bi-wallet-fill"></i>
+              </h1>
+            </div>
+            <!-- Button trigger modal -->
+            <i
+              class="bi bi-plus cadastrar-carteira text-center mb-1"
+              style="font-size: 35px"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            ></i>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Nova Carteira
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <label class="form-label">Nome da Carteira</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="minha nova carteira"
+                        name="nomeCarteira"
+                        maxlength="50"
+                        [(ngModel)]="carteira.nomeCarteira"
+                      />
+                    </div>
+                    <div class="row">
+                      <label class="form-label">Saldo inicial</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="100,90"
+                        name="saldo"
+                        mask="separator.2"
+                        separatorLimit=","
+                        [(ngModel)]="carteira.saldo"
+                      />
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      (click)="incluirCarteira(carteira)"
+                    >
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="carteiras" *ngFor="let c of carteiras">
+              <div class="row carteira">
+                <i
+                  class="bi bi-trash3 text-end"
+                  style="color: rgb(116, 12, 48)"
+                  (click)="removerCarteira(c.idCarteira!)"
+                ></i>
+                <div class="col" (click)="loadMovimentacoes(c.idCarteira!)">
+                  <i class="bi bi-cash-stack" style="font-size: 30px"></i>
+                  <p>{{ c.nomeCarteira }}</p>
+                </div>
+                <div class="col">
+                  <span>{{ c.saldo | currency: "BRL" }}</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <content class="transactions-wrapper">
+            <h2>
+              Despesas da carteira
+              <span class="total-balance"></span>
+            </h2>
+            <div class="transactions">
+              <div class="row" *ngFor="let m of movimentacoes">
+                <div class="col-4">
+                  <i
+                    [ngClass]="{
+                      'bi bi-graph-up-arrow mx-2': m.tipo == 'Entrada'
+                    }"
+                    style="color: rgb(47, 235, 172)"
+                  ></i>
+                  <i
+                    [ngClass]="{
+                      'bi bi-graph-down-arrow mx-2': m.tipo == 'Saida'
+                    }"
+                    style="color: rgb(233, 52, 67)"
+                  ></i>
+                  <span>{{ m.descricaoCategoria }}</span>
+                </div>
+                <div class="col-4">
+                  <i class="bi bi-calendar4-event mx-2"></i>
+                  <span class="">{{ m.data | date: "dd/MM/yyyy" }}</span>
+                </div>
+                <div class="col-4">
+                  <i
+                    class="bi bi-plus-circle px-2"
+                    style="color: rgb(47, 235, 172)"
+                    *ngIf="m.tipo == 'Entrada'"
+                  >
+                  </i>
+                  <i
+                    class="bi bi-dash-circle px-2"
+                    *ngIf="m.tipo == 'Saida'"
+                    style="color: rgb(233, 52, 67)"
+                  ></i>
+                  <span>{{ m.valor | currency: "BRL" }}</span>
+                </div>
+              </div>
+            </div>
+          </content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

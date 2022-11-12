@@ -41,5 +41,27 @@ a:hover{
   width: calc(99.5vw - 370px);
   margin-left: 1rem;
   border-radius: 1rem;
-  display: grid;
+  flex-wrap: wrap;
+}
+.d-flex{
+  justify-content: center;
+}
+.dados{
+  width: 388px;
+  align-self: center;
+  background: #4592b969;
+  opacity: 100;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.historico{
+  width: 30%;
+  height: 60vh;
+  border-radius: 1rem;
+  background:linear-gradient(-64deg,#6b074d,#4b31df);
+  opacity: 90%;
+}
+ul{
+  padding-left:0;
 }

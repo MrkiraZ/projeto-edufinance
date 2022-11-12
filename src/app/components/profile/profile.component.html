@@ -49,15 +49,139 @@
   </div>
 
   <div class="details">
-    <h1 class="text-center mt-2">
-      Resumo <i class="bi bi-file-earmark-person-fill"></i>
-    </h1>
-    <span>{{ usuario.nomePerfil }}</span>
-    <span>{{ usuario.email }}</span>
-    <span>{{ usuario.dtNascimento }}</span>
-    <span>{{ usuario.sexo }}</span>
-    <span>{{ usuario.logradouro }}</span>
-    <span>{{ usuario.cep }}</span>
-    <span>{{ usuario.cidade }}</span>
+    <div class="title mt-3 mb-5">
+      <h1 class="text-center mt-2">
+        Resumo <i class="bi bi-file-earmark-person-fill"></i>
+      </h1>
+    </div>
+    <div class="caixas d-flex">
+      <div class="mx-3 dados">
+        <h5>Perfil de consumo <i class="bi bi-graph-up"></i></h5>
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.nomePerfil }}"
+          disabled="true"
+        />
+        <h5>Email <i class="bi bi-envelope-fill"></i></h5>
+        <input
+          class="form-control form-control mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.email }}"
+          disabled="true"
+        />
+        <h5>
+          Sexo
+          <i
+            [ngClass]="{ 'bi bi-gender-male': usuario.sexo == 'Masculino' }"
+          ></i>
+          <i
+            [ngClass]="{ 'bi bi-gender-female': usuario.sexo == 'Feminino' }"
+          ></i>
+        </h5>
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.sexo }}"
+          disabled="true"
+        />
+        <h5>Data De Nascimento <i class="bi bi-calendar-check-fill"></i></h5>
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.dtNascimento | date: 'dd/MM/yyyy' }}"
+          disabled="true"
+        />
+      </div>
+      <div class="mx-3 dados">
+        <h5>Endereço <i class="bi bi-signpost-fill"></i></h5>
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.logradouro }}"
+          disabled="true"
+        />
+        <h5>Bairro <i class="bi bi-pin-map-fill"></i></h5>
+        <input
+          class="form-control form-control mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.bairro }}"
+          disabled="true"
+        />
+        <h5>Cidade <i class="bi bi-geo-alt-fill"></i></h5>
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.cidade }}"
+          disabled="true"
+        />
+        <h5>UF <i class="bi bi-map-fill"></i></h5>
+
+        <input
+          class="form-control form-control-lg mb-3"
+          type="text"
+          placeholder=".form-control-lg"
+          aria-label=".form-control-lg example"
+          value="{{ usuario.uf }}"
+          disabled="true"
+        />
+      </div>
+      <div class="historico">
+        <h3 class="text-center">
+          Historico<i class="px-3 bi bi-clock-history"></i>
+        </h3>
+        <ul>
+          <li *ngFor="let m of movimentacoes" class="mb-3">
+            <div class="container">
+              <div class="row">
+                <div class="col-8">
+                  <i
+                    [ngClass]="{
+                      'bi bi-graph-up-arrow mx-2': m.tipo == 'Entrada'
+                    }"
+                    style="color: rgb(47, 235, 172)"
+                  ></i>
+                  <i
+                    [ngClass]="{
+                      'bi bi-graph-down-arrow mx-2': m.tipo == 'Saida'
+                    }"
+                    style="color: rgb(233, 52, 67)"
+                  ></i>
+                  <span>{{ m.descricaoCategoria }}</span>
+                </div>
+                <div class="col-4">
+                  <i
+                    class="bi bi-plus-circle px-2"
+                    style="color: rgb(47, 235, 172)"
+                    *ngIf="m.tipo == 'Entrada'"
+                  >
+                  </i>
+                  <i
+                    class="bi bi-dash-circle px-2"
+                    *ngIf="m.tipo == 'Saida'"
+                    style="color: rgb(233, 52, 67)"
+                  ></i>
+                  <span>{{ m.valor | currency: "BRL" }}</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
