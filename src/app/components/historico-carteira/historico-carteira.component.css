@@ -147,7 +147,7 @@ ul{
 }
 
 .transactions {
-	margin-top: 60px;
+	margin-top: 30px;
 	border-top: 1px solid #e5e5e5;
 	padding-top: 50px;
 	height: 550px;
@@ -273,6 +273,10 @@ padding: 0px 4px 0px;
 .col{
   place-self: center;
     text-align: -webkit-center;
+}
+.col-4{
+  white-space: nowrap;
+
 }
 
 /* animations */

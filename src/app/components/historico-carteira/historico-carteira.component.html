@@ -125,7 +125,7 @@
                       class="btn btn-primary"
                       (click)="incluirCarteira(carteira)"
                     >
-                      Save changes
+                      Cadastrar carteira
                     </button>
                   </div>
                 </div>
@@ -149,12 +149,117 @@
               </div>
             </div>
           </aside>
+          <content *ngIf="addMovimentacao" class="transactions-wrapper">
+            <h3 class="text-center">Adicionar nova transação R$</h3>
+            <hr />
+            <div class="row mt-3">
+              <div class="col">
+                <label class="form-label">Data da transação</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="data"
+                  [(ngModel)]="movimentacao.data"
+                />
+              </div>
+              <div class="col">
+                <label class="form-label">Valor</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="valor"
+                  prefix="R$ "
+                  mask="separator.2"
+                  separatorLimit=","
+                  [(ngModel)]="movimentacao.valor"
+                />
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col">
+                <label class="form-label">Tipo da transação</label>
+                <select
+                  name="tipo"
+                  class="form-select"
+                  [(ngModel)]="movimentacao.tipo"
+                >
+                  <option value="Entrada">Entrada</option>
+                  <option value="Saida">Saida</option>
+                </select>
+              </div>
+              <div class="col">
+                <label class="form-label">Carteira da transação</label>
+                <select
+                  name="tipo"
+                  class="form-select"
+                  [(ngModel)]="movimentacao.idCarteira"
+                >
+                  <option *ngFor="let c of carteiras" [value]="c.idCarteira">
+                    {{ c.nomeCarteira }}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <hr />
+              <label class="form-label text-center mt-3"
+                >Informe a categoria da transação</label
+              >
+              <select
+                name="idCategoria"
+                class="form-select"
+                [(ngModel)]="movimentacao.idCategoria"
+              >
+                <option *ngFor="let cat of categorias" [value]="cat.id">
+                  {{ cat.descricao }}
+                </option>
+                <option>Add categoria</option>
+              </select>
+            </div>
+            <div class="row mt-3">
+              <label class="form-label text-center mt-3"
+                >Ou informe uma nova</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Conta de agua"
+                name="descricao"
+                maxlength="50"
+                [(ngModel)]="movimentacao.descricaoCategoria"
+              />
+              <div class="row">
+                <div
+                  type="button"
+                  class="btn btn-primary mt-5 col mx-5"
+                  (click)="incluirMovimentacao(movimentacao)"
+                >
+                  Adicionar
+                </div>
+                <div
+                  class="btn btn-danger mt-5 col"
+                  (click)="addMovimentacao = false"
+                >
+                  Voltar
+                </div>
+              </div>
+            </div>
+          </content>
 
-          <content class="transactions-wrapper">
-            <h2>
-              Despesas da carteira
-              <span class="total-balance"></span>
-            </h2>
+          <content *ngIf="!addMovimentacao" class="transactions-wrapper">
+            <div class="row">
+              <h2>
+                Despesas da carteira
+                <span class="total-balance"></span>
+              </h2>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="addMovimentacao = true"
+              >
+                <i class="bi bi-plus-lg"></i> Nova transação
+              </button>
+            </div>
             <div class="transactions">
               <div class="row" *ngFor="let m of movimentacoes">
                 <div class="col-4">

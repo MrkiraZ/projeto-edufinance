@@ -13,7 +13,7 @@ export class CarteiraService {
   //link das informacoes rest
   baseUrl:string = "http://localhost:8080/api/carteiras";
 
-  //retorna a lista de todos os clientes
+  //retorna a lista de todos as carteiras
   public getCarteirasApi(): Observable<Carteira[]>{
    return this.http.get<Carteira[]>(this.baseUrl);
   }
@@ -22,12 +22,12 @@ export class CarteiraService {
     return this.http.get<Carteira[]>(url);
    }
 
-  //retorna cliente especifico (util para perfil e gestao)
+  //retorna carteira especifico (util para perfil e gestao)
   public getCarteiraApi(id:number): Observable<Carteira>{
      const url = `${this.baseUrl}/buscar/${id}`
      return this.http.get<Carteira>(url);
   }
-  //cadastra o cliente no banco de dados
+  //cadastra o carteira no banco de dados
   public postCarteiraApi(carteira:Carteira): Observable<Carteira>{
    return this.http.post<Carteira>(this.baseUrl, carteira);
   }
