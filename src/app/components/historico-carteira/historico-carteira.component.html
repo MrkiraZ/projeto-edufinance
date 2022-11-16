@@ -261,7 +261,7 @@
               </button>
             </div>
             <div class="transactions">
-              <div class="row" *ngFor="let m of movimentacoes">
+              <div class="row despesa" *ngFor="let m of movimentacoes">
                 <div class="col-4">
                   <i
                     [ngClass]="{
@@ -293,7 +293,7 @@
                     *ngIf="m.tipo == 'Saida'"
                     style="color: rgb(233, 52, 67)"
                   ></i>
-                  <span>{{ m.valor | currency: "BRL" }}</span>
+                  <span>{{ m.valor | currency: "BRL" }} </span>
                 </div>
               </div>
             </div>

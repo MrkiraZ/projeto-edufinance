@@ -43,7 +43,7 @@ ngOnInit(): void {
   incluirCarteira(carteira:Carteira){
     carteira.cpf= this.storage.getItem(`usuario`) as string
     this.carteiraService.postCarteiraApi(carteira).subscribe(() =>this.router.navigate([this.router.url]));
-    this.ngOnInit()
+    window.location.reload();
 
   }
   incluirMovimentacao(movimentacao:Movimentacao){
