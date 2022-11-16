@@ -20,6 +20,7 @@ export class MenuComponent implements OnInit {
     if(!this.storage.getItem("usuario")){
       return false;
     }
+    this.nomeUsuario = this.storage.getItem(`nome`) as string
     return true;
   }
   deslogar(){

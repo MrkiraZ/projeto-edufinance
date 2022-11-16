@@ -1,4 +1,5 @@
 export interface Movimentacao {
+    [x: string]: any;
     id?: number;
     data?: Date;
     tipo?: string;

@@ -24,7 +24,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.usuarioService.getUsuarioApi(this.storage.getItem(`usuario`) as string).subscribe((res) =>{ this.usuario = res})
     this.MovimentacaoService.getMovimentacaosPorCpfApi(this.storage.getItem(`usuario`) as string).subscribe((res) =>{this.movimentacoes=res})
-    console.log(this.movimentacoes)
   }
 
 }

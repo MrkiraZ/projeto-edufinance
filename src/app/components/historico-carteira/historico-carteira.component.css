@@ -15,6 +15,7 @@ hr{
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
     width: 1px;
+    height: 1px;
   }
 
   *::-webkit-scrollbar-track {
@@ -276,7 +277,7 @@ padding: 0px 4px 0px;
 }
 .col-4{
   white-space: nowrap;
-
+  overflow-x: overlay;
 }
 
 /* animations */

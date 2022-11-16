@@ -42,22 +42,21 @@ ngOnInit(): void {
 }
   incluirCarteira(carteira:Carteira){
     carteira.cpf= this.storage.getItem(`usuario`) as string
-    this.carteiraService.postCarteiraApi(carteira).subscribe(() =>this.router.navigate(["/carteiras"]));
+    this.carteiraService.postCarteiraApi(carteira).subscribe(() =>this.router.navigate([this.router.url]));
     this.ngOnInit()
 
   }
   incluirMovimentacao(movimentacao:Movimentacao){
     this.movimentacaoService.postMovimentacaoApi(movimentacao).subscribe(()=>this.router.navigate([this.router.url]))
     this.addMovimentacao=false
-    this.ngOnInit()
+    window.location.reload()
   }
   incluirCategoria(categoria:Categoria){
     this.categoriaService.postCategoriaApi(categoria).subscribe(()=> this.router.navigate([this.router.url]))
   }
   removerCarteira(idCarteira:number){
     this.carteiraService.deleteCarteiraApi(idCarteira).subscribe(() =>this.router.navigate([this.router.url]))
-    //window.location.reload()
-    this.ngOnInit()
+    window.location.reload()
   }
   loadMovimentacoes(idCarteira:number){
     this.movimentacoes=[]

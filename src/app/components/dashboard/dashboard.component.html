@@ -1,1 +1,100 @@
-<p>dashboard works!</p>
+<div class="content mt-5 mb-5">
+  <div class="info">
+    <div class="logout">
+      <i class="bi bi-box-arrow-left" style="font-size: 35px"></i>
+    </div>
+    <div class="profile-img mt-5 mx-5 text-center">
+      <img
+        src="https://thispersondoesnotexist.com/image"
+        class="rounded-circle"
+        height="150"
+        alt="foto de perfil"
+        loading="lazy"
+      />
+      <h3 class="mt-2">{{ usuario.nome }}</h3>
+    </div>
+    <ul>
+      <li class="mt-5 mb-3">
+        <a routerLink="/profile" class="mx-3">
+          <i
+            class="bi bi-person-workspace"
+            style="color: #ffff; font-size: 30px"
+          >
+          </i>
+          <span class="px-3">Dados</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/carteiras" class="mx-3">
+          <i class="bi bi-wallet2" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Carteiras</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/dashboard" class="mx-3">
+          <i class="bi bi-speedometer" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Dashboard</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a href="#" class="mx-3">
+          <i
+            class="bi bi-shield-check"
+            style="color: #ffff; font-size: 30px"
+          ></i>
+          <span class="px-3">Seguranca</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="details">
+    <div class="title mt-3 mb-5">
+      <h1 class="text-center mt-2">
+        Dashboard
+        <i class="bi bi-speedometer"></i>
+      </h1>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="charts container">
+          <div
+            class="text-center"
+            id="total"
+            style="width: 500px; height: 500px; margin: 1rem"
+          ></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="container text-center mt-2">
+          <div class="card 1">
+            <div class="card_title title-white">
+              <h4>Carteiras</h4>
+              <p>{{ carteiras.length }} <i class="bi bi-wallet-fill"></i></p>
+            </div>
+          </div>
+          <div class="card 1">
+            <div class="card_title title-white">
+              <h4>Movimentações</h4>
+              <p>
+                {{ movimentacoes.length }}<i class="bi bi-arrow-down-up"></i>
+              </p>
+            </div>
+          </div>
+          <div
+            class="card 1"
+            *ngIf="movimentacoes.length > 0 && carteiras.length > 0"
+          >
+            <div class="card_title title-white">
+              <h5>Media de movimentações</h5>
+              <p>
+                {{ movimentacoes.length / carteiras.length }}
+                <i class="bi bi-calculator-fill"></i>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

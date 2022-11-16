@@ -4,7 +4,6 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { NgxMaskModule } from 'ngx-mask';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -18,7 +17,6 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErroComponent } from './components/erro/erro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +37,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+
     NgxMaskModule.forRoot(),
   ],
   providers: [],
