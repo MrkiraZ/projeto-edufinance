@@ -34,7 +34,7 @@ export class HistoricoCarteiraComponent implements OnInit {
   addMovimentacao:boolean=false;
   erro:string="";
   storage: Storage = localStorage;
-
+  //
 ngOnInit(): void {
   this.usuarioService.getUsuarioApi(this.storage.getItem(`usuario`) as string).subscribe((res) =>{ this.usuario = res})
   this.carteiraService.getCarteirasPorCpfApi(this.storage.getItem(`usuario`) as string).subscribe(res=>{this.carteiras=res})
@@ -42,7 +42,8 @@ ngOnInit(): void {
 }
   incluirCarteira(carteira:Carteira){
     carteira.cpf= this.storage.getItem(`usuario`) as string
-    this.carteiraService.postCarteiraApi(carteira).subscribe(() =>this.router.navigate([this.router.url]));
+    carteira.saldo=0
+    this.carteiraService.postCarteiraApi(carteira).subscribe(() =>{this.router.navigate([this.router.url])});
     window.location.reload();
 
   }
@@ -63,5 +64,8 @@ ngOnInit(): void {
     this.ngOnInit();
     this.movimentacaoService.getMovimentacaosPorCarteiraApi(idCarteira).subscribe(res =>{this.movimentacoes=res})
   }
+  removeMovimentacao(idMovimentacao:number){
+    this.movimentacaoService.deleteMovimentacaoApi(idMovimentacao).subscribe(()=>window.location.reload());
 
+  }
 }

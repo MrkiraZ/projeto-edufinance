@@ -99,18 +99,6 @@
                         [(ngModel)]="carteira.nomeCarteira"
                       />
                     </div>
-                    <div class="row">
-                      <label class="form-label">Saldo inicial</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="100,90"
-                        name="saldo"
-                        mask="separator.2"
-                        separatorLimit=","
-                        [(ngModel)]="carteira.saldo"
-                      />
-                    </div>
                   </div>
                   <div class="modal-footer">
                     <button
@@ -134,17 +122,29 @@
             <hr />
             <div class="carteiras" *ngFor="let c of carteiras">
               <div class="row carteira">
-                <i
-                  class="bi bi-trash3 text-end"
-                  style="color: rgb(116, 12, 48)"
-                  (click)="removerCarteira(c.idCarteira!)"
-                ></i>
-                <div class="col" (click)="loadMovimentacoes(c.idCarteira!)">
-                  <i class="bi bi-cash-stack" style="font-size: 30px"></i>
-                  <p>{{ c.nomeCarteira }}</p>
+                <div
+                  class="col-10"
+                  style="height: 25px; border-bottom: 1px solid black"
+                ></div>
+                <div
+                  class="col-2 text-end"
+                  style="height: 25px; border-bottom: 1px solid black"
+                >
+                  <i
+                    class="bi bi-trash3 text-end"
+                    style="color: rgb(116, 12, 48); font-size: 15px"
+                    (click)="removerCarteira(c.idCarteira!)"
+                  ></i>
                 </div>
-                <div class="col">
-                  <span>{{ c.saldo | currency: "BRL" }}</span>
+
+                <div class="row" (click)="loadMovimentacoes(c.idCarteira!)">
+                  <div class="col">
+                    <i class="bi bi-cash-stack" style="font-size: 30px"></i>
+                    <p>{{ c.nomeCarteira }}</p>
+                  </div>
+                  <div class="col">
+                    <span>{{ c.saldo | currency: "BRL" }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@
 
           <content *ngIf="!addMovimentacao" class="transactions-wrapper">
             <div class="row">
-              <h2>
+              <h2 class="text-center">
                 Despesas da carteira
                 <span class="total-balance"></span>
               </h2>
@@ -277,11 +277,11 @@
                   ></i>
                   <span>{{ m.descricaoCategoria }}</span>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                   <i class="bi bi-calendar4-event mx-2"></i>
                   <span class="">{{ m.data | date: "dd/MM/yyyy" }}</span>
                 </div>
-                <div class="col-4">
+                <div class="col-3">
                   <i
                     class="bi bi-plus-circle px-2"
                     style="color: rgb(47, 235, 172)"
@@ -294,6 +294,13 @@
                     style="color: rgb(233, 52, 67)"
                   ></i>
                   <span>{{ m.valor | currency: "BRL" }} </span>
+                </div>
+                <div class="col-2 d-flex gap-1">
+                  <i class="bi bi-pencil-square"></i>
+                  <i
+                    class="bi bi-x-square"
+                    (click)="removeMovimentacao(m.id!)"
+                  ></i>
                 </div>
               </div>
             </div>

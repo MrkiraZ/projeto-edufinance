@@ -108,7 +108,6 @@ ul{
 
 .app-wrapper {
 	height: 700px;
-	max-width: 880px;
 	margin: 0 auto;
 	border-radius: 1rem;
 	display: flex;
@@ -133,7 +132,7 @@ ul{
 }
 
 .transactions-wrapper {
-	width: 520px;
+	width: 700px;
 	padding: 50px;
 }
 
@@ -263,9 +262,12 @@ padding: 0px 4px 0px;
   background-color: #673ab78c;
   margin: 1rem;
 }
+.row.active{
+  background-color:green;
+}
 
-.carteira:hover {
-  transform: scale(1.07);
+i.bi.bi-trash3.text-end:hover {
+  transform: scale(1.2);
   background-color: rgb(161, 91, 152);
   padding: .5rem;
   border-radius: 1rem;
@@ -278,6 +280,23 @@ padding: 0px 4px 0px;
 .col-4{
   white-space: nowrap;
   overflow-x: overlay;
+}
+
+i.bi.bi-pencil-square{
+  cursor: pointer;
+  color:#eaf371;
+}
+i.bi.bi-pencil-square:hover{
+  font-size: 20px;
+  transition: .2s;
+}
+i.bi.bi-x-square{
+  cursor: pointer;
+  color:#f72d70;
+}
+i.bi.bi-x-square:hover{
+  font-size: 20px;
+  transition: .2s;
 }
 /* animations */
 @keyframes fade-in {
