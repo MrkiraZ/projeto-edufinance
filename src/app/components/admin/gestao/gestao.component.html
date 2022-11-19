@@ -22,7 +22,7 @@
           <tr *ngFor="let u of usuarios">
             <td>{{ u.cpf }}</td>
             <td>{{ u.nome }}</td>
-            <td>{{ u.dtNascimento }}</td>
+            <td>{{ u.dtNascimento | date: "dd/MM/yyyy" }}</td>
             <td>{{ u.nomePerfil }}</td>
             <td>{{ u.cidade }}</td>
             <td>{{ u.cep }}</td>
