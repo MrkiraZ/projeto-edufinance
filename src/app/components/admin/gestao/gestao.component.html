@@ -1,0 +1,39 @@
+<div class="container-fluid main mt-3">
+  <div class="container">
+    <div class="title text-center">
+      <h1>Gestão de usuarios <i class="bi bi-people-fill"></i></h1>
+    </div>
+    <div class="container mt-5">
+      <table class="table table-borded table-responsive table-striped bg-dark">
+        <thead class="table-dark">
+          <tr>
+            <td>CPF</td>
+            <td>Nome</td>
+            <td>Dt Nascimento</td>
+            <td>Perfil</td>
+            <td>Cidade</td>
+            <td>Cep</td>
+            <td>UF</td>
+            <td>Sexo</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody class="corpo">
+          <tr *ngFor="let u of usuarios">
+            <td>{{ u.cpf }}</td>
+            <td>{{ u.nome }}</td>
+            <td>{{ u.dtNascimento }}</td>
+            <td>{{ u.nomePerfil }}</td>
+            <td>{{ u.cidade }}</td>
+            <td>{{ u.cep }}</td>
+            <td>{{ u.uf }}</td>
+            <td>{{ u.sexo }}</td>
+            <td (click)="remover(u.cpf!)">
+              <i class="bi bi-x-square" style="color: rgb(240, 94, 94)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

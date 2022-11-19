@@ -1,0 +1,32 @@
+.main{
+  padding: 1rem;
+  width: 99vw;
+  height: 85vh;
+  border-radius: 1rem;
+  background:linear-gradient(#FF5CAA,#1C9890);
+}
+.title{
+  background:linear-gradient(#29A3BE,#26476D);
+  height:100px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+thead tr td{
+  background: linear-gradient(#8629BE,#2254D4);
+  font-weight: 700;
+  border: 1px solid black;
+  text-align: center;
+}
+.corpo td{
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.corpo:hover td:hover{
+  font-size: 1.2rem;
+  background-color: rgb(127, 161, 255);
+  transition: .2s;
+}

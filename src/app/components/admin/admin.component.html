@@ -1,0 +1,43 @@
+<div class="container mt-5 mb-5">
+  <div class="row px-5">
+    <div class="col">
+      <div class="img text-center">
+        <img
+          src="https://irp.cdn-website.com/6050187d/dms3rep/multi/Reduced-Admin.gif"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="col">
+      <form>
+        <div class="mb-3">
+          <label class="form-label text-dark">ID</label>
+          <input type="text" class="form-control" name="id" [(ngModel)]="id" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-dark">Senha</label>
+          <input
+            type="password"
+            class="form-control"
+            name="senha"
+            [(ngModel)]="senha"
+          />
+        </div>
+        <div class="text-center">
+          <button
+            type="submit"
+            (click)="validarAdmin(id, senha)"
+            class="btn btn-primary btn1"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="erro mt-4 text-center">
+        <span class="alert alert-danger mt-4" *ngIf="erro.length > 0">{{
+          erro
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

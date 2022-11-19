@@ -17,6 +17,8 @@ import { SobreComponent } from './components/sobre/sobre.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ErroComponent } from './components/erro/erro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { GestaoComponent } from './components/admin/gestao/gestao.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SobreComponent,
     FooterComponent,
     ErroComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminComponent,
+    GestaoComponent
   ],
   imports: [
     BrowserModule,

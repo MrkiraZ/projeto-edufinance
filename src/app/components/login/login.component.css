@@ -13,3 +13,21 @@
   background-repeat: no-repeat;
   border-radius: 1rem;
 }
+.admin-icon{
+  position: absolute;
+  bottom: .3rem;
+  right: 10px;
+  cursor: pointer;
+
+}
+.admin-icon:hover{
+  transition: .3s;
+  border-radius: 50%;
+  padding: .5rem;
+  background-color: rgb(255, 127, 148);
+
+}
+.admin-icon img{
+  width: 50px;
+  height: 50px;
+}

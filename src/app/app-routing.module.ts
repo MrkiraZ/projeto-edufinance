@@ -9,16 +9,22 @@ import { RegisterAccountComponent } from './components/register-account/register
 import { SobreComponent } from './components/sobre/sobre.component';
 import { AuthGuardGuard } from './services/auth-guard.guard';
 import { HistoricoCarteiraComponent } from './components/historico-carteira/historico-carteira.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { GestaoComponent } from './components/admin/gestao/gestao.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  //register
+  //register/login
   {path: 'login',component: LoginComponent},
+  {path: `admin`,component: AdminComponent},
   {path: 'register-account', component: RegisterAccountComponent},
+  //profile e menus
   {path: 'sobre', component: SobreComponent},
   {path: `profile`, component: ProfileComponent, canActivate:[AuthGuardGuard]},
   {path: `dashboard`,component:DashboardComponent,canActivate:[AuthGuardGuard]},
   {path: `carteiras`, component:HistoricoCarteiraComponent,canActivate:[AuthGuardGuard]},
+  {path: 'gestao',component:GestaoComponent},
+  //error page
   {path: '**', component:ErroComponent},
 ];
 

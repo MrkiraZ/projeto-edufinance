@@ -25,11 +25,6 @@ export class LoginComponent implements OnInit {
     let user = usuario.cpf
     let senha= usuario.senha
     if(user != null && senha != null){
-      if(user == `admin` && senha ==`admin`){
-        localStorage.setItem(`admin`, `admin`)
-
-        //colocar o link de redirect do adm
-      }
       this.usuarioService.getUsuarioApi(user).subscribe(
         {
           next: (res) =>{

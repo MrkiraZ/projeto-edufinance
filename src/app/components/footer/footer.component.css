@@ -3,7 +3,7 @@
   padding:10px 0 10px 0;
   text-align:center;
   cursor:default;
-  background:black;
+  background:#191c1f;
 }
 .container-footer::before{
   content: 'All right reseverd @ 2022 - ';
@@ -19,17 +19,17 @@
   color:rgb(211, 17, 130);
 }
 .container-footer .Mileninha::after{
-  content: ' Mileninha Gameplays &';
+  content: ' Milene Rodrigues&';
 }
 .container-footer .Larrizsca{
   color:rgb(119, 0, 255);
 }
 .container-footer .Larrizsca::after{
-  content: ' Lariiczsa Sallowicz &';
+  content: ' Larissa Sallowicz &';
 }
 .container-footer .Breno{
   color:rgb(0, 255, 98);
 }
 .container-footer .Breno::after{
-  content: ' Breno breno & RANDOM QUE NAO SEI O NOME';
+  content: ' Breno De Sousa & Vinicius Santos';
 }
