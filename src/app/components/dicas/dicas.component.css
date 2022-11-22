@@ -1,0 +1,33 @@
+.principal{
+  padding:3rem;
+  background:linear-gradient(rgba(21, 111, 245,0.3043),rgba(36, 6, 225,1));
+  border-radius: 3rem;
+}
+.circulo{
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: grid;
+  align-items: center;
+  justify-items:center;
+}
+.circulo img{
+  width: 5rem;
+  height: 5rem;
+}
+.c-1{
+   background: linear-gradient(rgb(132, 44, 163),rgb(40, 50, 133));
+}
+.texto{
+  padding: 2rem;
+  height: 15.5rem;
+  border-radius: 1rem;
+  background-color: red;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  max-width:263px;
+}
+

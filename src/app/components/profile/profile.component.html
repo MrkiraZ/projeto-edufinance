@@ -72,6 +72,7 @@
           placeholder=".form-control-lg"
           aria-label=".form-control-lg example"
           value="{{ usuario.email }}"
+          name="email"
           disabled="true"
         />
         <h5>
@@ -102,7 +103,39 @@
         />
       </div>
       <div class="mx-3 dados">
-        <h5>Endereço <i class="bi bi-signpost-fill"></i></h5>
+        <h5 *ngIf="editar">CEP <i class="bi bi-signpost-fill"></i></h5>
+        <input
+          *ngIf="editar"
+          class="form-control form-control-lg mb-3"
+          type="text"
+          mask="00000-000"
+          placeholder="00000-000"
+          value="{{ endereco.cep }}"
+          (blur)="consultaCep($any($event.target).value)"
+          name="cep"
+        />
+        <h5 *ngIf="editar">Numero <i class="bi bi-signpost-fill"></i></h5>
+        <input
+          *ngIf="editar"
+          class="form-control form-control-lg mb-3"
+          type="text"
+          mask="000000"
+          placeholder="00000"
+          value="{{ usuario.numero }}"
+          name="numero"
+        />
+        <h5>
+          Endereço <i class="bi bi-signpost-fill"></i
+          ><i
+            (click)="editar = !editar"
+            class="bi bi-pencil"
+            style="
+              margin-left: 220px;
+              color: rgb(252, 172, 115);
+              cursor: pointer;
+            "
+          ></i>
+        </h5>
         <input
           class="form-control form-control-lg mb-3"
           type="text"
@@ -139,6 +172,14 @@
           value="{{ usuario.uf }}"
           disabled="true"
         />
+        <button
+          *ngIf="editar"
+          type="button"
+          class="btn btn-primary"
+          (click)="updateResumo(endereco)"
+        >
+          Salvar
+        </button>
       </div>
       <div class="historico">
         <h3 class="text-center">

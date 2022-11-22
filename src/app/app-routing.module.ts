@@ -11,9 +11,11 @@ import { AuthGuardGuard } from './services/auth-guard.guard';
 import { HistoricoCarteiraComponent } from './components/historico-carteira/historico-carteira.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GestaoComponent } from './components/admin/gestao/gestao.component';
+import { DicasComponent } from './components/dicas/dicas.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'dicas',component: DicasComponent},
   //register/login
   {path: 'login',component: LoginComponent},
   {path: `admin`,component: AdminComponent},

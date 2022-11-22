@@ -19,6 +19,7 @@ import { ErroComponent } from './components/erro/erro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GestaoComponent } from './components/admin/gestao/gestao.component';
+import { DicasComponent } from './components/dicas/dicas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { GestaoComponent } from './components/admin/gestao/gestao.component';
     ErroComponent,
     DashboardComponent,
     AdminComponent,
-    GestaoComponent
+    GestaoComponent,
+    DicasComponent
   ],
   imports: [
     BrowserModule,

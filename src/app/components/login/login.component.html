@@ -123,7 +123,7 @@
                     class="form-control form-control-lg"
                     [(ngModel)]="usuario.cpf"
                     name="cpf"
-                    maxlength="11"
+                    mask="000.000.000-00"
                     (blur)="validaCpf($any($event.target).value)"
                   />
                 </div>
