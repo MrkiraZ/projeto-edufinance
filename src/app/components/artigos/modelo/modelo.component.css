@@ -1,0 +1,37 @@
+
+.col-9{
+  background:linear-gradient(#3a94b7, #ab07ff73);
+  height: 100%;
+  border-radius: 1rem;
+}
+.col-9 img{
+  width:900px;
+  height: 300px;
+}
+ h1{
+  margin: 3rem;
+}
+h3{
+  margin:3rem;
+}
+p{
+  margin:3rem;
+}
+.col-3{
+  height:100;
+  border-radius: 1rem;
+  background: linear-gradient(#11325544,#44888588);
+  display: flex;
+  justify-content: center;
+}
+.creator{
+  width:150px;
+  height: 150px;
+  background: url(https://images.unsplash.com/photo-1602677416173-f33f012bafd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) center center;
+  background-size: contain;
+  border-radius: 50%;
+}
+.creator h4{
+  position: relative;
+  bottom:-160px;
+}
