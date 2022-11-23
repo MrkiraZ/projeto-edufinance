@@ -12,10 +12,14 @@ import { HistoricoCarteiraComponent } from './components/historico-carteira/hist
 import { AdminComponent } from './components/admin/admin.component';
 import { GestaoComponent } from './components/admin/gestao/gestao.component';
 import { DicasComponent } from './components/dicas/dicas.component';
+import { ArtigosComponent } from './components/artigos/artigos.component';
+import { ModeloComponent } from './components/artigos/modelo/modelo.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'dicas',component: DicasComponent},
+  {path: 'artigos',component: ArtigosComponent},
+  {path: 'modelo',component: ModeloComponent},
   //register/login
   {path: 'login',component: LoginComponent},
   {path: `admin`,component: AdminComponent},

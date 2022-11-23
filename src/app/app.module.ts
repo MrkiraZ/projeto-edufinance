@@ -20,6 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { GestaoComponent } from './components/admin/gestao/gestao.component';
 import { DicasComponent } from './components/dicas/dicas.component';
+import { ArtigosComponent } from './components/artigos/artigos.component';
+import { ModeloComponent } from './components/artigos/modelo/modelo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { DicasComponent } from './components/dicas/dicas.component';
     DashboardComponent,
     AdminComponent,
     GestaoComponent,
-    DicasComponent
+    DicasComponent,
+    ArtigosComponent,
+    ModeloComponent
   ],
   imports: [
     BrowserModule,

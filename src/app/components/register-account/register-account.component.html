@@ -80,7 +80,7 @@
                     class="form-control"
                     name="cep"
                     [(ngModel)]="endereco.cep"
-                    maxlength="8"
+                    mask="00000-000"
                     (blur)="consultaCep($any($event.target).value)"
                   />
                 </div>
