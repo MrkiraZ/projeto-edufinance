@@ -23,6 +23,7 @@ import { DicasComponent } from './components/dicas/dicas.component';
 import { ArtigosComponent } from './components/artigos/artigos.component';
 import { ModeloComponent } from './components/artigos/modelo/modelo.component';
 import { SegurancaComponent } from './components/seguranca/seguranca.component';
+import { SubListaUsuarioPipe } from './pipes/sub-lista-usuario.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,9 @@ import { SegurancaComponent } from './components/seguranca/seguranca.component';
     DicasComponent,
     ArtigosComponent,
     ModeloComponent,
-    SegurancaComponent
+    SegurancaComponent,
+
+    SubListaUsuarioPipe
   ],
   imports: [
     BrowserModule,
