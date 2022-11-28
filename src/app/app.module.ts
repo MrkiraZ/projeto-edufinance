@@ -22,6 +22,7 @@ import { GestaoComponent } from './components/admin/gestao/gestao.component';
 import { DicasComponent } from './components/dicas/dicas.component';
 import { ArtigosComponent } from './components/artigos/artigos.component';
 import { ModeloComponent } from './components/artigos/modelo/modelo.component';
+import { SegurancaComponent } from './components/seguranca/seguranca.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { ModeloComponent } from './components/artigos/modelo/modelo.component';
     GestaoComponent,
     DicasComponent,
     ArtigosComponent,
-    ModeloComponent
+    ModeloComponent,
+    SegurancaComponent
   ],
   imports: [
     BrowserModule,

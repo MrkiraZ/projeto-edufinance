@@ -1,0 +1,161 @@
+<div class="content mt-5 mb-5">
+  <div class="info">
+    <div class="logout">
+      <i class="bi bi-box-arrow-left" style="font-size: 35px"></i>
+    </div>
+    <div class="profile-img mt-5 mx-5 text-center">
+      <img
+        src="https://thispersondoesnotexist.com/image"
+        class="rounded-circle"
+        height="150"
+        alt="foto de perfil"
+        loading="lazy"
+      />
+      <h3 class="mt-2">{{ usuario.nome }}</h3>
+    </div>
+    <ul>
+      <li class="mt-5 mb-3">
+        <a routerLink="/profile" class="mx-3">
+          <i
+            class="bi bi-person-workspace"
+            style="color: #ffff; font-size: 30px"
+          >
+          </i>
+          <span class="px-3">Dados</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/carteiras" class="mx-3">
+          <i class="bi bi-wallet2" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Carteiras</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/dashboard" class="mx-3">
+          <i class="bi bi-speedometer" style="color: #fff; font-size: 30px"></i>
+          <span class="px-3">Dashboard</span>
+        </a>
+      </li>
+      <li class="mt-5 mb-3">
+        <a routerLink="/seguranca" class="mx-3">
+          <i
+            class="bi bi-shield-check"
+            style="color: #ffff; font-size: 30px"
+          ></i>
+          <span class="px-3">Segurança</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="details">
+    <div class="title mt-3 mb-5">
+      <h1 class="text-center mt-2">
+        Segurança <i class="bi bi-shield-check"></i>
+      </h1>
+    </div>
+    <div class="caixas d-flex">
+      <div class="col">
+        <div class="mx-3 dados">
+          <h5>
+            Alterar senha
+            <i class="bi bi-key-fill"></i>
+          </h5>
+          <input
+            class="form-control form-control-lg mb-3"
+            type="text"
+            placeholder="nova senha"
+            aria-label=".form-control-lg example"
+            name="senha"
+            [(ngModel)]="senha"
+          />
+          <h5>Confirmar nova senha</h5>
+          <input
+            class="form-control form-control-lg mb-3"
+            type="text"
+            placeholder="nova senha"
+            aria-label=".form-control-lg example"
+            name="senhaclone"
+            [(ngModel)]="senhaClone"
+          />
+          <div class="erro text-center">
+            <span
+              class="btn btn-outline-danger"
+              *ngIf="erro.trim().length > 0"
+              style="
+                border-radius: 1rem;
+                background-color: #dc3545;
+                color: #fff;
+              "
+              >{{ erro }}</span
+            >
+          </div>
+          <button
+            type="button"
+            (click)="alterarSenha(senha, senhaClone)"
+            class="btn btn-primary mt-2"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mx-3 dados">
+          <h5>Excluir conta <i class="bi bi-person-x"></i></h5>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Excluir
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content bg-dark">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    Você tem certeza que deseja apagar a conta?
+                  </h1>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  Essa decisão não pode ser desfeita, cuidado
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Voltar
+                  </button>
+                  <button
+                    type="button"
+                    (click)="excluirConta()"
+                    class="btn btn-danger"
+                  >
+                    Excluir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

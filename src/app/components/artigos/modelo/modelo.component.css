@@ -21,8 +21,10 @@ p{
   height:100;
   border-radius: 1rem;
   background: linear-gradient(#11325544,#44888588);
+}
+.details{
   display: flex;
-  justify-content: center;
+  flex-direction:column;
 }
 .creator{
   width:150px;
@@ -30,8 +32,29 @@ p{
   background: url(https://images.unsplash.com/photo-1602677416173-f33f012bafd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80) center center;
   background-size: contain;
   border-radius: 50%;
+  align-self: center;
 }
-.creator h4{
-  position: relative;
-  bottom:-160px;
+.divider {
+  background-color: #60b5ca;
+  height: 1px;
+  width: 80%;
+  align-self: center;
+
+}
+.title {
+  color: #cec6c6;
+  font-family: arial;
+  font-size: .9rem;
+  font-style: italic;
+  margin-top: 4px;
+}
+.social-links i{
+  cursor: pointer;
+  font-size: 35px;
+  margin-right: 1rem;
+}
+.social-links i:hover{
+  font-size:45px;
+  color:#3a94b7;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
 }

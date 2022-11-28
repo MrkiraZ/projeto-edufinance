@@ -14,6 +14,7 @@ import { GestaoComponent } from './components/admin/gestao/gestao.component';
 import { DicasComponent } from './components/dicas/dicas.component';
 import { ArtigosComponent } from './components/artigos/artigos.component';
 import { ModeloComponent } from './components/artigos/modelo/modelo.component';
+import { SegurancaComponent } from './components/seguranca/seguranca.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: `profile`, component: ProfileComponent, canActivate:[AuthGuardGuard]},
   {path: `dashboard`,component:DashboardComponent,canActivate:[AuthGuardGuard]},
   {path: `carteiras`, component:HistoricoCarteiraComponent,canActivate:[AuthGuardGuard]},
+  {path: `seguranca`,component:SegurancaComponent,canActivate:[AuthGuardGuard]},
   {path: 'gestao',component:GestaoComponent},
   //error page
   {path: '**', component:ErroComponent},

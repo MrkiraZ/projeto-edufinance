@@ -119,3 +119,33 @@ a.spam-button:link {
     grid-row: 4 / 8;
   }
 }
+
+.currently-options .filters ul li {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all .3s;
+}
+.currently-options .filters ul li.active,
+.currently-options .filters ul li:hover {
+  background-color: #b9226e;
+}
+.content{
+  background-color: #282b2f;
+  border-radius: 1rem;
+  padding:1rem;
+}
+.item-artigo img{
+  width:-webkit-fill-available;
+  height:300px;
+}
+
+span.author img{
+  width:100%;
+  height: 100%;
+}
