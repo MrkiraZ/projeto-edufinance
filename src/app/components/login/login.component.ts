@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.storage.removeItem(`usuario`);
-    this.storage.removeItem(`admin`)
+    this.storage.removeItem(`admin`);
   }
   login(usuario:Usuario):void{
     let user = usuario.cpf

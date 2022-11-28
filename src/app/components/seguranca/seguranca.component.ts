@@ -36,6 +36,7 @@ alterarSenha(senha:string, senhaCopy:string){
 }
 excluirConta() {
   this.storage.removeItem(`usuario`)
-  this.usuarioService.deleteUsuarioApi(this.usuario.cpf as string).subscribe(()=>{this.router.navigate(['/home'])})
+  this.usuarioService.deleteUsuarioApi(this.usuario.cpf as string).subscribe(()=>{  this.router.navigate(['/home'])
+})
 }
 }

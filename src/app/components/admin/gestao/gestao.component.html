@@ -4,6 +4,15 @@
       <h1>Gestão de usuarios <i class="bi bi-people-fill"></i></h1>
     </div>
     <div class="container mt-5">
+      <div class="col-auto mb-2">
+        <input
+          type="text"
+          class="form-control"
+          #busca
+          (keyup)="(0)"
+          placeholder="pesquisar cliente"
+        />
+      </div>
       <table class="table table-borded table-responsive table-striped bg-dark">
         <thead class="table-dark">
           <tr>
@@ -19,7 +28,7 @@
           </tr>
         </thead>
         <tbody class="corpo">
-          <tr *ngFor="let u of usuarios">
+          <tr *ngFor="let u of usuarios | subListaUsuario: busca.value">
             <td>{{ u.cpf }}</td>
             <td>{{ u.nome }}</td>
             <td>{{ u.dtNascimento | date: "dd/MM/yyyy" }}</td>
